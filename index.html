@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Jerónimo Arenas García</title>
-<meta name="description" content="Jerónimo Arenas García, Full Professor at Universidad Carlos III de Madrid. Machine learning and NLP for expert decision support.">
+<meta name="description" content="Software, data and research by Jerónimo Arenas García (UC3M): topic models, language models and NLP tools for expert decision support.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,15 +13,18 @@
 <body>
 <header class="top">
   <div class="wrap">
-    <p class="kicker">Universidad Carlos III de Madrid</p>
-    <h1>Jerónimo Arenas García</h1>
-    <p class="role">Full Professor · Department of Signal Theory and Communications</p>
-    <p class="lede">I work on machine learning for the semantic analysis of large text collections, and on turning it into tools that experts can configure, understand and trust.</p>
+    <div class="hero">
+      <img class="avatar" src="photo.jpg" alt="Jerónimo Arenas García in the mountains" width="160" height="160">
+      <div>
+        <p class="kicker">Universidad Carlos III de Madrid · Signal Theory and Communications</p>
+        <h1>Jerónimo Arenas García</h1>
+      </div>
+    </div>
+    <p class="lede">Machine learning and NLP for people who have to make decisions with large document collections. This page collects the tools, data and papers my group has released, so that others can use them.</p>
     <nav class="links" aria-label="Profiles">
-      <a href="mailto:jarenas@ing.uc3m.es">Email</a>
+      <a href="https://github.com/jeroarenas">GitHub</a>
       <a href="https://scholar.google.es/citations?user=40AV6F0AAAAJ">Google Scholar</a>
       <a href="https://orcid.org/0000-0003-4071-7068">ORCID</a>
-      <a href="https://github.com/jeroarenas">GitHub</a>
       <a href="https://www.linkedin.com/in/jeronimoarenas">LinkedIn</a>
       <a href="https://researchportal.uc3m.es/display/inv34318">UC3M Research Portal</a>
     </nav>
@@ -30,100 +33,126 @@
 
 <nav class="toc" aria-label="Sections">
   <div class="wrap">
-    <a href="#about">About</a><a href="#research">Research</a><a href="#systems">Systems &amp; software</a><a href="#projects">Projects</a><a href="#publications">Publications</a><a href="#people">Supervision</a><a href="#service">Service</a>
+    <a href="#software">Software &amp; data</a><a href="#papers">Selected papers</a><a href="#projects">Projects</a><a href="#teaching">Teaching</a><a href="#about">About</a>
   </div>
 </nav>
 
 <main class="wrap">
 
-<section id="about">
-  <h2>About</h2>
-  <p>I am Full Professor at the Department of Signal Theory and Communications of Universidad Carlos III de Madrid (UC3M), where I was Head of Department from 2023 to 2026, and a member of the Machine Learning for Data Science group. I received the Telecommunication Engineering degree from Universidad Politécnica de Madrid (2000, first of my class, National Degree Award) and the PhD from UC3M (2004, Extraordinary Doctorate Award) as an FPU fellow.</p>
-  <p>I was a postdoctoral researcher at the Technical University of Denmark for 15 months and have done research stays at the University of Sheffield, UCLA, IIT Kharagpur, the University of São Paulo and the Barcelona Supercomputing Center (2021, transformer-based neural topic models).</p>
-  <dl class="facts">
-    <div><dt>34</dt><dd>JCR journal papers (22 Q1)</dd></div>
-    <div><dt>~65</dt><dd>international conference papers</dd></div>
-    <div><dt>4,100+</dt><dd>citations · h-index 32 (Google Scholar)</dd></div>
-    <div><dt>6</dt><dd>PhD theses supervised</dd></div>
-  </dl>
-</section>
+<section id="software">
+  <h2>Software &amp; data</h2>
+  <p class="intro">Open tools and resources from our work on topic modeling, language models and public-sector text. Most were built with domain experts and released with the paper that describes them.</p>
 
-<section id="research">
-  <h2>Research</h2>
-  <p>My group builds machine learning and NLP systems, increasingly based on language models, that support decision-making by domain experts. We have worked on scientific production and research funding, on public procurement and, more recently, on clinical text. In each case the work goes beyond the processing pipeline to end-user tools that experts evaluate in their own workflows.</p>
-  <ul class="cards">
-    <li><h3>Topic models for decision support</h3><p>Neural topic models that are interpretable and usable by non-specialists, with expert-in-the-loop training and hierarchical refinement.</p></li>
-    <li><h3>Language models for information extraction</h3><p>Local, open-weight language models for semantic search, data enrichment and schema-guided extraction from documents, with attention to reliability and explainability.</p></li>
-    <li><h3>Foundations</h3><p>Multivariate analysis, kernel methods, adaptive filtering and, recently, estimation with known input covariance. A solid grasp of the foundations allows ad-hoc designs instead of off-the-shelf tools.</p></li>
+  <div class="grid">
+
+
+    <article class="item">
+      <p class="tags"><span>LLMs</span><span>Information extraction</span><span>Public procurement</span></p>
+      <h3>PONTE / pAtChWoRK</h3>
+      <p>A hybrid NLP and LLM pipeline that turns public procurement PDFs into a navigable knowledge base: it corrects classification errors, extracts unstructured fields and computes procurement indicators. pAtChWoRK is the first, openly available version, evaluated in a user study with procurement practitioners; PONTE extends it and is being integrated into the procurement platform of the ALIA initiative.</p>
+      <p class="venue">ACL 2026 (System Demonstrations)</p>
+      <p class="actions"><a href="https://github.com/beauseant/patchwork">Code</a><a href="https://aclanthology.org/2026.acl-demo.55/">Paper</a><a href="https://youtu.be/IyWAeOWHpvE">Video</a></p>
+    </article>
+
+    <article class="item">
+      <p class="tags"><span>Topic models</span><span>Search</span><span>Decision support</span></p>
+      <h3>CASE</h3>
+      <p>Large-scale exploitation of topic models: a Solr engine with a custom indexing strategy for Bayesian and neural topic models, topic inference on new texts and topic-enriched semantic search, packaged with Docker. Used for STI indicators and for a service that supports the evaluation of research projects.</p>
+      <p class="venue">COLING 2025 (System Demonstrations)</p>
+      <p class="actions"><a href="https://github.com/Nemesis1303/CASE">Code</a><a href="https://aclanthology.org/2025.coling-demos.15/">Paper</a><a href="https://youtu.be/Iv366i9lEXc">Video</a></p>
+    </article>
+
+    <article class="item">
+      <p class="tags"><span>Topic models</span><span>Expert-in-the-loop</span></p>
+      <h3>ITMT · Interactive Topic Model Trainer</h3>
+      <p>A graphical tool for domain experts to train, evaluate, annotate and curate topic models, covering Bayesian and neural methods, including hierarchical models. Developed in the IntelComp project and released under the MIT license.</p>
+      <p class="venue">EACL 2023 (System Demonstrations)</p>
+      <p class="actions"><a href="https://github.com/IntelCompH2020/topicmodeler">Code</a><a href="https://aclanthology.org/2023.eacl-demo.6/">Paper</a></p>
+    </article>
+
+    <article class="item">
+      <p class="tags"><span>Topic models</span><span>Decision support</span></p>
+      <h3>Topic models for decision-support systems</h3>
+      <p>A two-part study of how to train, represent, exploit and refine topic models so that they are useful in decision-support systems, including expert-in-the-loop hierarchical topic models that are model-agnostic and easy to tune.</p>
+      <p class="venue">Engineering Applications of Artificial Intelligence, 2025</p>
+      <p class="actions"><a href="https://researchportal.uc3m.es/display/act577907">Part I</a><!-- TODO: Part II link and code --></p>
+    </article>
+
+    <article class="item">
+      <p class="tags"><span>Corpus</span><span>Embeddings</span><span>Spanish</span></p>
+      <h3>Legal-ES</h3>
+      <p>An open resource kit for legal Spanish: a large corpus of legislative, jurisprudential and administrative texts, with word embeddings and topic models. Developed with the Spanish Plan for the Advancement of Language Technologies.</p>
+      <p class="venue">LT4Gov workshop, LREC 2020</p>
+      <p class="actions"><a href="https://aclanthology.org/2020.lt4gov-1.6/">Paper</a><!-- TODO: download link for the resources --></p>
+    </article>
+
+    <article class="item">
+      <p class="tags"><span>Statistical learning</span><span>Semi-supervised</span><span>Reproducible</span></p>
+      <h3>SS-unbiased</h3>
+      <p>When does knowing the input covariance help least squares? Finite-sample expressions for the excess mean-square error of least squares and of unbiased semi-supervised estimators that use the known covariance, and a realizable leave-one-out combination that attains the optimum. Work started with the late Jan Larsen and Lars Kai Hansen at DTU. The repository reproduces all results of the paper.</p>
+      <p class="venue">IEEE Signal Processing Letters, 2026</p>
+      <p class="actions"><a href="https://github.com/jeroarenas/SS-unbiased">Code</a></p>
+    </article>
+
+  </div>
+
+  <h3 class="sub">Models and data on Zenodo</h3>
+  <ul class="list zen">
+    <li><a href="https://doi.org/10.5281/zenodo.10709519"><strong>IntelComp open topic models for AI and cancer</strong></a>: expert-curated topic models used to enrich CORDIS, OpenAIRE and PATSTAT, ready for inference on new documents.</li>
+    <li><a href="https://doi.org/10.5281/zenodo.10706214"><strong>IntelComp AI science and technology indicators</strong></a>: indicators on AI publications and patents in the EU and Spain, derived from expert-curated topic models.</li>
+    <li><a href="https://doi.org/10.5281/zenodo.15098779"><strong>Topic models for Spanish public procurement by CPV</strong></a>: topic models trained on Spanish tenders, one per procurement category.</li>
+    <li><a href="https://doi.org/10.5281/zenodo.7085021"><strong>IntelComp topic modeling service</strong></a>: project deliverable describing the topic modeling toolbox and its use.</li>
   </ul>
 </section>
 
-<section id="systems">
-  <h2>Systems &amp; software</h2>
-  <ul class="list">
-    <li><strong>ITMT</strong>: Interactive Topic Model Trainer, for training and curating topic models with domain experts (EACL 2023 demo). <!-- TODO: repository link --></li>
-    <li><strong>CASE</strong>: large-scale topic exploitation for decision support systems (COLING 2025 demo). <!-- TODO: repository link --></li>
-    <li><strong>PONTE</strong>: NLP pipeline for public procurement data, being integrated into the procurement platform of the ALIA initiative. <!-- TODO: repository link --></li>
-    <li><strong>IntelComp</strong> and <strong>nextProcurement</strong>: AI platforms for science, technology and innovation policy and for public procurement (European projects).</li>
-    <li><strong>Research funding recommender</strong>: matches funding calls to UC3M researchers.</li>
-    <li><strong>Legal-ES</strong>: large-scale resources for Spanish legal text processing.</li>
-  </ul>
-  <p class="more">More code at <a href="https://github.com/jeroarenas">github.com/jeroarenas</a>.</p>
-</section>
-
-<section id="projects">
-  <h2>Selected projects</h2>
-  <ul class="list dated">
-    <li><span class="when">2025–</span><div><strong>Proyecto Comunidad ALIA</strong>: local language models to extract information from public tender documents. LT2 AI Services, within the ALIA initiative. PI.</div></li>
-    <li><span class="when">2024–2027</span><div><strong>COBA</strong>: context-reinforced learning algorithms (PID2023-146684NB-I00, AEI). Member.</div></li>
-    <li><span class="when">2022–2025</span><div><strong>nextProcurement</strong>: open, harmonized and enriched public procurement platform (European Commission, CEF). UC3M PI.</div></li>
-    <li><span class="when">2022–2024</span><div><strong>Massive text processing and AI for the management of research and training at the university</strong> (AEI). PI.</div></li>
-    <li><span class="when">2021–2023</span><div><strong>IntelComp</strong>: competitive intelligence cloud/HPC platform for AI-based STI policy making (European Commission, H2020). UC3M PI and Technical Manager.</div></li>
-    <li><span class="when">2018–2021</span><div><strong>MUSKETEER</strong>: machine learning in federated privacy-preserving scenarios (European Commission, H2020). Member.</div></li>
-    <li><span class="when">2018–2021</span><div><strong>Machine learning for big data analysis of heterogeneous document sources</strong> (Spanish Ministry). Member.</div></li>
-  </ul>
-</section>
-
-<section id="publications">
-  <h2>Selected publications</h2>
-  <p class="more">Full list on <a href="https://scholar.google.es/citations?user=40AV6F0AAAAJ">Google Scholar</a>.</p>
+<section id="papers">
+  <h2>Selected papers</h2>
+  <p class="intro">A few papers that go with the tools above or that I would recommend reading first. The full list is on <a href="https://scholar.google.es/citations?user=40AV6F0AAAAJ">Google Scholar</a>.</p>
   <ol class="pubs">
     <li>J. Arenas-García, C. Moriana-Varo, L. K. Hansen, J. Larsen. “When does known input covariance help least squares? A finite-sample analysis.” <em>IEEE Signal Processing Letters</em>, 2026.</li>
-    <li>L. Calvo-Bartolomé, V. Aldana, K. Cantarero, A. Madroñal de Mesa, J. Arenas-García, J. L. Boyd-Graber. “Discrepancy detection at the data level: toward consistent multilingual question answering.” <em>EMNLP</em>, 2025.</li>
-    <li>L. Calvo-Bartolomé, D. Tziotzios, S. Blanco-Fortes, D. Pérez-Fernández, J. Arenas-García. “Topic models for decision-support systems. Part I: Training, representation and exploitation of topic models.” <em>Engineering Applications of Artificial Intelligence</em>, 159, 2025.</li>
-    <li>L. Calvo-Bartolomé, J. Arenas-García. “Topic models for decision-support systems. Part II: Expert-in-the-loop hierarchical topic models.” <em>Engineering Applications of Artificial Intelligence</em>, 159, 2025.</li>
-    <li>L. Calvo-Bartolomé, J. Arenas-García, D. Pérez-Fernández. “CASE: Large scale topic exploitation for decision support systems.” <em>COLING: System Demonstrations</em>, 2025.</li>
-    <li>L. Calvo-Bartolomé, J. A. Espinosa Melchor, J. Arenas-García. “ITMT: Interactive Topic Model Trainer.” <em>EACL: System Demonstrations</em>, 2023.</li>
+    <li>L. Calvo-Bartolomé, S. Blanco-Fortes, E. Cedeño, J. Arenas-García. “pAtChWoRK: Patching the pieces of public procurement documents.” <em>ACL System Demonstrations</em>, 2026. <a href="https://aclanthology.org/2026.acl-demo.55/">[paper]</a></li>
+    <li>L. Calvo-Bartolomé, D. Tziotzios, S. Blanco-Fortes, D. Pérez-Fernández, J. Arenas-García. “Topic models for decision-support systems. Part I: Training, representation and exploitation of topic models.” <em>Engineering Applications of Artificial Intelligence</em>, 2025.</li>
+    <li>L. Calvo-Bartolomé, J. Arenas-García. “Topic models for decision-support systems. Part II: Expert-in-the-loop hierarchical topic models.” <em>Engineering Applications of Artificial Intelligence</em>, 2025.</li>
     <li>M. Vázquez-López, J. Pereira-Delgado, J. Cid-Sueiro, J. Arenas-García. “Validation of scientific topic models using graph analysis and corpus metadata.” <em>Scientometrics</em>, 2022.</li>
-    <li>S. Muñoz-Romero, V. Gómez-Verdejo, J. Arenas-García. “Regularized multivariate analysis framework for interpretable high-dimensional variable selection.” <em>IEEE Computational Intelligence Magazine</em>, 11, 2016.</li>
-    <li>J. Arenas-García, L. A. Azpicueta-Ruiz, M. T. M. Silva, V. H. Nascimento, A. H. Sayed. “Combinations of adaptive filters: performance and convergence properties.” <em>IEEE Signal Processing Magazine</em>, 33, 2016.</li>
+    <li>J. Arenas-García, L. A. Azpicueta-Ruiz, M. T. M. Silva, V. H. Nascimento, A. H. Sayed. “Combinations of adaptive filters: performance and convergence properties.” <em>IEEE Signal Processing Magazine</em>, 2016.</li>
     <li>J. Arenas-García, K. B. Petersen, G. Camps-Valls, L. K. Hansen. “Kernel multivariate analysis framework for supervised subspace learning.” <em>IEEE Signal Processing Magazine</em>, 2013.</li>
-    <li>J. Arenas-García, A. R. Figueiras-Vidal, A. H. Sayed. “Mean-square performance of a convex combination of two adaptive filters.” <em>IEEE Transactions on Signal Processing</em>, 54, 2006.</li>
   </ol>
 </section>
 
-<section id="people">
-  <h2>Supervision</h2>
-  <p>I have supervised six PhD theses (five in Spain, one in India), most recently on topic analysis with expert knowledge (2025). I currently supervise a thesis on sparsity in neural topic models and multimodal topic models. Prospective PhD students interested in NLP and machine learning for decision support are welcome to get in touch.</p>
+<section id="projects">
+  <h2>Projects and their outputs</h2>
+  <ul class="list dated">
+    <li><span class="when">2025–</span><div><strong>ALIA procurement platform</strong> (contract with LT2 AI Services). Local language models to extract information from tender documents; continues the PONTE pipeline.</div></li>
+    <li><span class="when">2022–2025</span><div><strong>nextProcurement</strong> (European Commission, CEF). Open, harmonized and enriched public procurement data. Outputs: the procurement pipeline that led to PONTE and pAtChWoRK. <a href="https://github.com/nextprocurement">GitHub organization</a></div></li>
+    <li><span class="when">2022–2024</span><div><strong>Massive text processing and AI for research management at the university</strong> (AEI). Outputs: a recommender that matches funding calls to UC3M researchers.</div></li>
+    <li><span class="when">2021–2023</span><div><strong>IntelComp</strong> (European Commission, H2020). AI platform for science, technology and innovation policy. Outputs: ITMT, CASE and the topic modeling service. <a href="https://github.com/IntelCompH2020">GitHub organization</a> · <a href="https://huggingface.co/intelcomp">Models on Hugging Face</a> · <a href="https://zenodo.org/communities/intelcomp">Zenodo community</a></div></li>
+  </ul>
 </section>
 
-<section id="service">
-  <h2>Service &amp; recognition</h2>
+<section id="teaching">
+  <h2>Teaching &amp; open material</h2>
   <ul class="list">
-    <li>Head of the Department of Signal Theory and Communications, UC3M (2023–2026).</li>
-    <li>President of the Spanish Chapter on Signal Processing and Communications.</li>
-    <li>Elected member of the IEEE Machine Learning for Signal Processing Technical Committee.</li>
-    <li>Associate Editor of <em>IEEE Signal Processing Letters</em>.</li>
-    <li>NLP and machine learning expert in the Spanish Government's Language Technology Plan (2018–2020).</li>
-    <li>UC3M Social Council Excellence Award (2018).</li>
+    <li><a href="https://github.com/ML4DS/ML4all"><strong>ML4all</strong></a>: a collection of Jupyter notebooks on machine learning, from Python and NumPy to classification, regression, clustering and topic modeling, developed with the <a href="https://ml4ds.webs.tsc.uc3m.es/machine-learning-for-all-ml4all/">ML4DS group</a> for our courses.</li>
+    <li><a href="https://github.com/jeroarenas/fisica-2bach-pau"><strong>Física 2.º de Bachillerato (PAU)</strong></a>: open notes in Spanish with full derivations, written for adults with a technical background who help students prepare the university entrance exam, and for students who prefer derivations to memorized formulas. CC BY-NC-SA 4.0.</li>
   </ul>
+</section>
+
+<section id="about">
+  <h2>About</h2>
+  <div class="about">
+  <div>
+  <p>I am Full Professor at the Department of Signal Theory and Communications of Universidad Carlos III de Madrid and a member of the Machine Learning for Data Science group. My background is in statistical signal processing (adaptive filtering, multivariate analysis, kernel methods); for the last decade I have worked on the semantic analysis of large text collections, from topic models to language models, always with an eye on the people who use the results.</p>
+  <p>Much of this work is done with Lorena Calvo-Bartolomé, Saúl Blanco-Fortes and colleagues at UC3M, and with collaborators at the University of Maryland, the Technical University of Denmark and the Spanish public administration.</p>
+  </div>
+  <figure class="wide"><img src="photo-ksc.jpg" alt="Jerónimo Arenas García at the Kennedy Space Center, with launch pads in the background" loading="lazy"></figure>
+  </div>
 </section>
 
 </main>
 
 <footer>
   <div class="wrap">
-    <p>Department of Signal Theory and Communications · Universidad Carlos III de Madrid · Avda. de la Universidad 30, 28911 Leganés, Spain</p>
+    <p>Department of Signal Theory and Communications · Universidad Carlos III de Madrid · Leganés, Spain</p>
   </div>
 </footer>
 </body>
